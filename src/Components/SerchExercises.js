@@ -3,6 +3,15 @@ import { Box, Button, Stack, TextField, Typography} from "@mui/material"
 
 
 const SerchExercises = () => {
+
+  const [search, setSearch] = useState('')
+
+  const handelSearch = async () => {
+    if(search){
+      // const excercisesData = await fatchData ();
+    }
+  }
+
   return (
     <Stack
       alignItems='center'
@@ -35,15 +44,15 @@ const SerchExercises = () => {
             borderRadius: "4px"
           },
           width: { 
-            lg: "1170px",
+            lg: "800px",
             xs: "350px",
           },
           backgroundColor: "#fff",
           borderRadius : "40px"
         }}
           height="76px"
-          value=""
-          onChange={(e) => {}}
+          value={search}
+          onChange={(e) => setSearch(e.target.value.toLocaleLowerCase())}
           placeholder='Search Excersice'
           type='text'
         />
@@ -55,9 +64,17 @@ const SerchExercises = () => {
           textTransform: 'none',
           width: {
             lg: '175px',
-            xs: '100px'
-          }
+            xs: '80px'
+          },
+          fontSize: {
+            lg: "20px",
+            xs: "14px"
+          },
+          height: "56px",
+          position: "absolute",
+          right: '0'
          }}
+         onClick={handelSearch}
         >
           Search
         </Button>
