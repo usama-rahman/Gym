@@ -4,7 +4,7 @@ import { Button, Stack, Typography} from "@mui/material"
 
 const ExerciseCard = ({ exercise }) => {
   return (
-    <link
+    <Link
     className='exercise-card'
     to={`/exercise/${exercise.id}`}
     >
@@ -17,7 +17,7 @@ const ExerciseCard = ({ exercise }) => {
     <Stack diraction="row">
         <Button></Button>
     </Stack>
-    </link>
+    </Link>
   )
 }
 
