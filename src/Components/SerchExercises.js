@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Box, Button, Stack, TextField, Typography} from "@mui/material"
-
+import { excerciseOption, fatchData } from '../utils/fatchData'
 
 const SerchExercises = () => {
 
@@ -8,7 +8,8 @@ const SerchExercises = () => {
 
   const handelSearch = async () => {
     if(search){
-      // const excercisesData = await fatchData ();
+      const excercisesData = await fatchData ('https://exercisedb.p.rapidapi.com/exercises/bodyPart/back', excerciseOption);
+      console.log(excercisesData)
     }
   }
 
