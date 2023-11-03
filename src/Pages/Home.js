@@ -3,13 +3,24 @@ import React from 'react'
 import HeroBanner from '../Components/HeroBanner'
 import SerchExercises from '../Components/SerchExercises'
 import Excercises from '../Components/Excercises'
+import { useState } from 'react'
 
 const Home = () => {
+   const [bodyPart, setBodyPart] = useState('all')
+  const [exercises, setExcercises] = useState([])
   return (
     <div >
       < HeroBanner />
-      < SerchExercises />
-      < Excercises />
+      < SerchExercises 
+        setExcercises={setExcercises} 
+        setBodyPart={setBodyPart}
+        bodyPart={bodyPart}
+      />
+      < Excercises 
+        setExcercises={setExcercises} 
+        setBodyPart={setBodyPart}
+        bodyPart={bodyPart}
+      />
     </div> 
   )
 }

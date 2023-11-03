@@ -3,10 +3,11 @@ import { Box, Button, Stack, TextField, Typography} from "@mui/material"
 import { excerciseOptions, fatchData } from '../utils/fatchData'
 import HorizontalScrollbar from './HorizontalScrollbar'
 
-const SerchExercises = () => {
+const SerchExercises = ({ setExcercises, bodyPart, setBodyPart}) => {
 
   const [search, setSearch] = useState('')
-  const [exercises, setExcercises] = useState([])
+  // eslint-disable-next-line no-unused-vars
+
   const [bodyParts, setBodyParts] = useState([])
 
   useEffect(() => {
@@ -106,7 +107,10 @@ const SerchExercises = () => {
         width: '100%',
         p: '20px'
       }}>
-        <HorizontalScrollbar data={bodyParts}/>
+        <HorizontalScrollbar 
+        bodyPart = { bodyPart}
+        setBodyPart = {setBodyPart}
+        data={bodyParts}/>
       </Box>
     </Stack>
     )
